@@ -1,0 +1,44 @@
+#!/bin/sh -e
+#
+# rc.remote
+#
+# When a lightbox boots up, it reached out to this file to execute. Yes.
+# You read correctly. Remove script execution. Some serious stuff.
+# Put your safety glasses on.
+
+SERIAL=$(cat /proc/cpuinfo | grep Serial | cut -d ' ' -f 2)
+WIRED_IP=$(ifconfig eth0 | grep "inet " | cut -d ':' -f2 | awk '{print $2}')
+WIRELESS_IP=$(ifconfig wlan0 | grep "inet " | cut -d ':' -f2 | awk '{print $2}')
+PUBLIC_IP=$(curl -fsSL http://ipecho.net/plain)
+STATUS=$(cat /home/pi/status.txt)
+
+# Set volume to max
+amixer cset numid=1 100%
+
+# where the higher the more aggressive the swap - 0 (swap off) to 100 (max).
+sysctl vm.swappiness=1
+
+# Turn off wifi power management (so that it doesn't 'sleep')
+iwconfig wlan0 power off
+
+# Send a HELLO so we know about this lightbox
+curl -fsSL "https://easttroy.org/pulse/?serial=${SERIAL}&wired_ip=${WIRED_IP}&wireless_ip=${WIRELESS_IP}&public_ip=${PUBLIC_IP}&status=${STATUS}" > /dev/null
+
+# Lightboxes must run through diagnostics first
+# if [[ $STATUS == "NEW" ]]
+# then
+#     RC_URL="https://bpk-endless.s3.us-east-1.amazonaws.com/rc.local-diagnostics"
+# elif [[ $STATUS == "READY" ]]
+# then
+#     RC_URL="https://bpk-endless.s3.us-east-1.amazonaws.com/rc.local"
+# fi
+
+cd /home/pi/Downloads &&
+rm -rf Node &&
+mkdir Node &&
+cd Node &&
+wget -N https://s3.amazonaws.com/www.easttroylights.com/media/Archive.zip &&
+unzip Archive.zip &&
+rm Archive.zip &&
+yarn install &&
+yarn start &
