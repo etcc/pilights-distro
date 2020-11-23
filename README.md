@@ -1,11 +1,11 @@
 # pilights operating system
 
-This repository contains the operating system image used for light controllers. Specifically the light boxes designed and built by Jamie Rohrer.
+This repository contains the operating system image used for light controllers. Specifically the light boxes designed and built by Jamie Rohrer of [Dither Studios](https://dither.studio/).
 
 ## Getting Started
 
-1. Download the [latest pilights release]().
-2. Download [Raspberry Pi Imager]().
+1. Download the [latest pilights release](https://raw.githubusercontent.com/etcc/pilights-distro/main/dist/pilights-latest.img.gz).
+2. Download [Raspberry Pi Imager](https://www.raspberrypi.org/software/).
 3. Open Raspberry Pi Imager, select the pilights image ('Use custom' menu option) and select your microSD card.
 4. Click 'Write'. Process takes about 10 minutes to complete.
 5. Boot up your Raspberry Pi 4 using your freshly imaged microSD card.
