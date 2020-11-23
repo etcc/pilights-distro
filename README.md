@@ -26,4 +26,4 @@ This is a modified copy of the Raspberry Pi OS. It's modifed to:
 - Downloads the latest lightbox software that builds and runs on each boot.
 - System optimizations to increase performance and improve bootup time.
 
-When you edit any files in the `scripts` folder, a GitHub Action will fire off which rebuilds the pi image, including your updated scripts. You can check the progress of the build on the [actions page](https://github.com/etcc/pilights-distro/actions).
+When you edit any files in the `scripts` folder, a GitHub Action will fire off which rebuilds the pi image, including your updated scripts. The result of all this is that the [link to the latest release](https://raw.githubusercontent.com/etcc/pilights-distro/main/dist/pilights-latest.img.gz) of the pilights distro will be updated with the new build. You can check the progress of the build on the [actions page](https://github.com/etcc/pilights-distro/actions).
