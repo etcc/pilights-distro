@@ -4,7 +4,7 @@ This repository contains the operating system image used for light controllers. 
 
 ## Getting Started
 
-1. Download the [latest pilights release](https://raw.githubusercontent.com/etcc/pilights-distro/main/dist/pilights-latest.img.gz).
+1. Download the [latest pilights release](https://easttroy.org/media/pilights-latest.img.gz).
 2. Download [Raspberry Pi Imager](https://www.raspberrypi.org/software/).
 3. Open Raspberry Pi Imager, select the pilights image ('Use custom' menu option) and select your microSD card.
 4. Click 'Write'. Process takes about 10 minutes to complete.
@@ -27,4 +27,4 @@ This is a modified copy of the Raspberry Pi OS. It's modifed to:
 - Downloads the latest lightbox software that builds and runs on each boot.
 - System optimizations to increase performance and improve bootup time.
 
-When you edit any files in the `scripts/` or `config/` folders, a GitHub Action will fire off which rebuilds the pi image, including your updated files. The result of all this is that the [link to the latest release](https://raw.githubusercontent.com/etcc/pilights-distro/main/dist/pilights-latest.img.gz) will be updated with the new build. You can check the progress of the build on the [actions page](https://github.com/etcc/pilights-distro/actions) incase bad things happen. They might. Still got your safety glasses on, right?
+When you edit any files in the `scripts/` or `config/` folders, a GitHub Action will fire off which rebuilds the pi image, including your updated files. The result of all this is that the [link to the latest release](https://easttroy.org/media/pilights-latest.img.gz) will be updated with the new build. You can check the progress of the build on the [actions page](https://github.com/etcc/pilights-distro/actions) incase bad things happen. They might. Still got your safety glasses on, right?
