@@ -1,0 +1,26 @@
+name: Build a fresh pi image
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+jobs:
+  build:
+    name: Build Image
+    runs-on: ubuntu-latest
+      # steps:
+      # - name: Update production codebase, collectstatic, restart
+      #   uses: appleboy/ssh-action@master
+      #   with:
+      #     host: ${{ secrets.HOST }}
+      #     username: ${{ secrets.USER }}
+      #     key: ${{ secrets.KEY }}
+      #     script: |
+      #       cd dja
+      #       git pull origin master
+      #       ./manage.py collectstatic
+      #       ./manage.py migrate
+      #       sudo systemctl stop gunicorn_dja.service
+      #       sudo systemctl start gunicorn_dja.service

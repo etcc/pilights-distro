@@ -17,7 +17,7 @@ Upon initial bootup, the lighbox will enter a diagnostics mode. This will do a q
 
 When you power up your lightbox and it can successfully reach the internet, it will send out a pulse, notifying East Troy Lights staff of your lightbox IP address and serial number. We manually enter serial numbers into our system and once registered, your lightbox will then be connected and visible within the lightbox network. There may be some delay from turning on your lightbox and having it registered.
 
-## For the hackers out there
+## For the hackers out there...
 
 This is a modified copy of the Raspberry Pi OS. It's modifed to:
 
@@ -25,3 +25,5 @@ This is a modified copy of the Raspberry Pi OS. It's modifed to:
 - Sends IP addresses (Wifi, Wired, and Public) to East Troy Lights staff on each boot.
 - Downloads the latest lightbox software that builds and runs on each boot.
 - System optimizations to increase performance and improve bootup time.
+
+When you edit any files in the `scripts` folder, a GitHub Action will fire off which rebuilds the pi image, including your updated scripts. You can check the progress of the build on the [actions page](https://github.com/etcc/pilights-distro/actions).
