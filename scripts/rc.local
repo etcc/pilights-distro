@@ -9,31 +9,6 @@
 # In order to enable or disable this script just change the execution
 # bits.
 
-# Restart the on-board wifi device if no network is detected
-while :; do
-  sleep 30
-  if ! [ "$(ping -c 1 8.8.8.8)" ]; then
-    echo relink >> /home/pi/network_status.log
-    ip link set wlan0 down && ip link set wlan0 up
-  fi
-done &
-
-# Reboot the system if we failed to reach a network after 5 attempts
-count=0
-while :; do
-  sleep 30
-  if ! [ "$(ping -c 1 8.8.8.8)" ]; then
-    count=$((count + 1))
-    echo "$count" >> /home/pi/network_status.log
-  else
-    count=0
-  fi
-  if [ $count -eq 5 ]; then
-    echo restart >> /home/pi/network_status.log
-    reboot
-  fi
-done &
-
 # Reach out and execute the Lightbox specific service startup script
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/etcc/pilights-distro/main/scripts/rc.remote)"
 
