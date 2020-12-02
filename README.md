@@ -2,7 +2,7 @@
 
 This repository contains the operating system image used for light controllers. Specifically the light boxes designed and built by Jamie Rohrer of [Dither Studios](https://dither.studio/).
 
-![Lights in action!](screenshot.jpg)
+[![Lights in action!](screenshot.jpg)](https://www.easttroylights.com/)
 
 ## Getting Started
 
