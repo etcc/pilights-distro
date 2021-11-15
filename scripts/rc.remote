@@ -2,8 +2,8 @@
 #
 # rc.remote
 #
-# When a lightbox boots up, it reached out to this file to execute. Yes.
-# You read correctly. Remove script execution. Some serious stuff.
+# When a lightbox boots up, it reaches out to this file to execute. Yes.
+# You read correctly. Remote script execution. Some serious stuff.
 # Put your safety glasses on.
 
 SERIAL=$(cat /proc/cpuinfo | grep Serial | cut -d ' ' -f 2)
